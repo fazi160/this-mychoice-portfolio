@@ -81,7 +81,7 @@ function App() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Our Projects</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">Demo Projects</h1>
       
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4 text-center">Dynamic Websites</h2>
