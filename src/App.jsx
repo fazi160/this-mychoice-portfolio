@@ -1,7 +1,7 @@
 import React from "react";
 
 function App() {
-  const projects = [
+  const Dynamic = [
     {
       name: "Navaratna Jewellers",
       url: "https://navaratna-client-side.vercel.app/",
@@ -34,36 +34,64 @@ function App() {
     }
   ];
 
+  const Static = [
+    {
+      name: "Consulator",
+      url: "https://consultar-xi.vercel.app/",
+      imageUrl: "/images/consultar.png",
+      description: "Static website for consultation organization"
+    },
+    {
+      name: "Gardnma",
+      url: "https://gardnma-delta.vercel.app/",
+      imageUrl: "/images/gardnma.png",
+      description: "Static website for Agriculture and farming organization"
+    }
+  ];
+
+  const renderProjects = (projects) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project, index) => (
+        <div key={index} className="border rounded-lg overflow-hidden shadow-lg">
+          <div className="h-48 bg-gray-200">
+            <img 
+              src={project.imageUrl} 
+              alt={project.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-4">
+            <h2 className="text-xl font-semibold mb-2">{project.name}</h2>
+            <p className="text-gray-600 mb-4">{project.description}</p>
+            <div className="flex justify-center">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border-2 border-black bg-white text-black px-4 py-2 rounded hover:bg-black hover:text-white transition-colors"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Our Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <div key={index} className="border rounded-lg overflow-hidden shadow-lg">
-            <div className="h-48 bg-gray-200">
-              <img 
-                src={project.imageUrl} 
-                alt={project.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{project.name}</h2>
-              <p className="text-gray-600 mb-4">{project.description}</p>
-              <div className="flex justify-center">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="justify-center align-middle text-center inline-block box-border border-2 border-black bg-white text-black px-4 py-2 rounded hover:bg-black hover:text-white transition-colors"
-                >
-                  View Project
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4 text-center">Dynamic Websites</h2>
+        {renderProjects(Dynamic)}
+      </section>
+      
+      <section>
+        <h2 className="text-2xl font-semibold mb-4 text-center">Static Websites</h2>
+        {renderProjects(Static)}
+      </section>
     </div>
   );
 }
