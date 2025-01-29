@@ -92,6 +92,7 @@ function App() {
         <h2 className="text-2xl font-semibold mb-4 text-center">Static Websites</h2>
         {renderProjects(Static)}
       </section>
+
     </div>
   );
 }
