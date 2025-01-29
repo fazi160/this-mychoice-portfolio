@@ -46,7 +46,14 @@ function App() {
       url: "https://gardnma-delta.vercel.app/",
       imageUrl: "/images/gardnma.png",
       description: "Static website for Agriculture and farming organization"
-    }
+    },
+    {
+      name: "Korax",
+      url: "https://korax.vercel.app/",
+      imageUrl: "/images/korax.png",
+      description: "Static website for Hotel"
+    },
+
   ];
 
   const renderProjects = (projects) => (
