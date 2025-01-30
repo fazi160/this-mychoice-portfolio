@@ -59,6 +59,12 @@ function App() {
       imageUrl: "/images/paheli.png",
       description: "Static website for Cyber security team",
     },
+    {
+    name: "Shapen",
+    url: "https://shapen-react.vercel.app/",
+    imageUrl: "/images/shapen.png",
+    description: "Static website for Construction and related website",
+  },
   ];
 
   const renderProjects = (projects) => (
